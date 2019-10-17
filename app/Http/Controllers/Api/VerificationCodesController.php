@@ -23,8 +23,8 @@ class VerificationCodesController extends Controller
         }
 
         $phone = $captchaData['phone'];
-
-        if (!app()->environment('production')) {
+        $code = '1234';
+        /*if (!app()->environment('production')) {
             $code = '1234';
         } else {
             // 生成4位随机数，左侧补0
@@ -43,7 +43,7 @@ class VerificationCodesController extends Controller
                 $message = $exception->getException('yunpian')->getMessage();
                 return $this->response->errorInternal($message ?? '短信发送异常');
             }
-        }
+        }*/
 
         $key = 'verificationCode_' . str_random(15);
         $expiredAt = now()->addMinutes(10);

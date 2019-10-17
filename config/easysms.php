@@ -10,7 +10,7 @@ return [
 
         // 默认可用的发送网关
         'gateways' => [
-            'yunpian',
+            'yuntongxun',
         ],
     ],
     // 可用的网关配置
@@ -18,8 +18,11 @@ return [
         'errorlog' => [
             'file' => '/tmp/easy-sms.log',
         ],
-        'yunpian' => [
-            'api_key' => env('YUNPIAN_API_KEY'),
+        'yuntongxun' => [
+            'app_id' => env('YUNTONGXUN_APP_ID'),
+            'account_sid' => env('YUNTONGXUN_ACCOUNT_SID'),
+            'account_token' => env('YUNTONGXUN_ACCOUNT_TOKEN'),
+            'is_sub_account' => false,
         ],
     ],
 ];
